@@ -1,4 +1,15 @@
-# Ansible
+# Configuration file
+## Get config file
 ```
-ansible dev -i inventory --list-hosts
+ansible --version
+...
+  config file = ...
+```
+
+or
+
+```
+ansible dev -i inventory --list-hosts -v
+Using ... as config file
+...
 ```
