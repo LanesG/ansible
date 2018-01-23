@@ -1,2 +1,4 @@
-# ansible
-A few Ansible quick tipps.
+# Ansible
+```
+ansible dev -i inventory --list-hosts
+```
