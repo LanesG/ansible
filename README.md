@@ -23,3 +23,13 @@ Using ... as config file
 1. ` ./ansible.cfg`
 1. `~./ansible.cfg`
 1. `/etc/ansible/ansible.cfg` 
+
+
+one line:
+`ansible ... -o`
+
+`-m command` is default and can be omitted
+
+`ansible-playbook --syntax-check playbook.yml`
+
+`-m shell` when using `|` or `>`
