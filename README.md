@@ -57,7 +57,13 @@ fold_newlines: >
 ## Variables
 If the same variable name is defined at mre than one level, the higher wins. Variables defined by the inventory are overridden by variables defined by the playbook, which are overridden by variables defined on the command line.
 
-It is recommended practice to define inventory variables using `host_vars` and `group_vars` directories, and not to define them directly in the inventory file or files.
+It is recommended practice to define inventory variables using `host_vars` and `group_vars` directories, and not to define them directly in the inventory file or files. Host variables take precedence over group variables, but variables defined by a playbook take precedence over both.
+
+When a variable is used as the first element to start a value, quotes are mandatory:
+```
+  with_items:
+    - "{{ foo }}"
+```
 
 ### Definition in playbook
 ```
@@ -74,3 +80,16 @@ It is recommended practice to define inventory variables using `host_vars` and `
     - vars/users.yml
 ```
 `vars_files` wins over `vars`.
+
+### Registered variables
+```
+    command: ps
+    register: ps_result
+  
+  - debug:
+    msg: "{{ ps_result.stdout }}"
+```
+Alte Syntax:
+```
+  - debug: var=ps_result
+```
