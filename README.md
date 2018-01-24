@@ -93,3 +93,12 @@ Alte Syntax:
 ```
   - debug: var=ps_result
 ```
+
+### Magic variables
+`hostvars` lets you ask about the variables of another host, including facts that have been gathered about that host. If, at this point, you haven’t talked to that host yet in any play in the playbook or set of playbooks, you can still get the variables, but you will not be able to see the facts.
+
+`group_names` is a list (array) of all the groups the current host is in. This can be used in templates using Jinja2 syntax to make template source files that vary based on the group membership (or role) of the host.
+
+`groups` is a list of all the groups (and hosts) in the inventory. This can be used to enumerate all hosts within a group.
+
+`inventory_hostname` is the name of the hostname as configured in Ansible’s inventory host file. This can be useful for when you don’t want to rely on the discovered hostname `ansible_hostname` or for other mysterious reasons. If you have a long FQDN, `inventory_hostname_short` also contains the part up to the first period, without the rest of the domain.
