@@ -48,9 +48,16 @@ fold_newlines: >
           a very long,
           long, long, long
           sentence.
+```
 
 # Playbooks
 ## Syntax check
 `ansible-playbook --syntax-check playbook.yml`
 
-
+## Variables
+```
+- hosts: all
+  vars:
+    foo: foobar
+    bar: barfoo
+```
