@@ -2,6 +2,12 @@
 ``` 
 autocmd FileType yaml setlocal ai ts=2 sw=2 et
 ```
+# Ad-hoc commands
+`-m command` is default and can be omitted
+
+Output on one line with `ansible ... -o`
+
+`-m shell` when using `|` or `>`
 
 # Configuration file
 ## Get used config file
@@ -27,7 +33,7 @@ Ansible looks for its configuration file in a number of places in order of prece
 1. `/etc/ansible/ansible.cfg` 
 
 # Multi-line strings
-Newline characters within the string are preserved:
+## Preserve newline characters within the string
 ```
 include_newlines: |
           ACME
@@ -35,13 +41,16 @@ include_newlines: |
           Atlanta, GA 30303
 ```
 
+## Convert newline characters to spaces and remove leading white spaces
+```
+fold_newlines: >
+          This is
+          a very long,
+          long, long, long
+          sentence.
 
-
-one line:
-`ansible ... -o`
-
-`-m command` is default and can be omitted
-
+# Playbooks
+## Syntax check
 `ansible-playbook --syntax-check playbook.yml`
 
-`-m shell` when using `|` or `>`
+
