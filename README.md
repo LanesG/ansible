@@ -90,9 +90,11 @@ When a variable is used as the first element to start a value, quotes are mandat
   - debug:
     msg: "{{ ps_result.stdout }}"
 ```
-Alte Syntax:
+or
 ```
-  - debug: var=ps_result
+  - debug:
+    var: ps_result
+    verbosity: 2
 ```
 
 ## Magic variables
