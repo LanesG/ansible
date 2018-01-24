@@ -128,4 +128,7 @@ Alte Syntax:
 
 |Loop Keyword|Description|
 | --- | --- |
-|`with_file`| |
+|`with_file`|Takes a list of control node file names. `item` is set to the content of each file in sequence.|
+|`with_fileglob`|Takes a file name globbing pattern. `item` is set to the content of each file in a directory on the control node that matches that pattern, in sequence, non-recursively.|
+|`with_sequence`|Generates a sequence of items in increasing numerical order. Can take `start` and `end` arguments which have a decimal, octal, or hexadecimal integer value.|
+|`with_random_choice`|Takes a list. `item` is set to one of the list items at random.|
