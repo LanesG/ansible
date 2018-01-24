@@ -102,3 +102,5 @@ Alte Syntax:
 `groups` is a list of all the groups (and hosts) in the inventory. This can be used to enumerate all hosts within a group.
 
 `inventory_hostname` is the name of the hostname as configured in Ansible’s inventory host file. This can be useful for when you don’t want to rely on the discovered hostname `ansible_hostname` or for other mysterious reasons. If you have a long FQDN, `inventory_hostname_short` also contains the part up to the first period, without the rest of the domain.
+
+`inventory_file` is the pathname and the filename pointing to the Ansible’s inventory host file.
