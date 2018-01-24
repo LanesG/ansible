@@ -55,9 +55,22 @@ fold_newlines: >
 `ansible-playbook --syntax-check playbook.yml`
 
 ## Variables
+If the same variable name is defined at mre than one level, the higher wins. Variables defined by the inventory are overridden by variables defined by the playbook, which are overridden by variables defined on the command line.
+
+It is recommended practice to define inventory variables using `host_vars` and `group_vars` directories, and not to define them directly in the inventory file or files.
+
+### Definition in playbook
 ```
 - hosts: all
   vars:
-    foo: foobar
-    bar: barfoo
+    user: joe
+    comment: "Joe"
 ```
+
+### Definition in vars_files
+```
+- hosts: all
+  vars_files:
+    - vars/users.yml
+```
+`vars_files` wins over `vars`.
