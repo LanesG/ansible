@@ -59,6 +59,8 @@ If the same variable name is defined at mre than one level, the higher wins. Var
 
 It is recommended practice to define inventory variables using `host_vars` and `group_vars` directories, and not to define them directly in the inventory file or files. Host variables take precedence over group variables, but variables defined by a playbook take precedence over both.
 
+The `include_vars` module is one more way to set variables in a playbook from an external file. It overrides any values set through the methods above.
+
 When a variable is used as the first element to start a value, quotes are mandatory:
 ```
   with_items:
