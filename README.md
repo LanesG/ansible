@@ -10,7 +10,7 @@ Output on one line with `ansible ... -o`
 `-m shell` when using `|` or `>`
 
 # Configuration file
-## Get used config file
+## Get config file location
 ```
 ansible --version
 ...
